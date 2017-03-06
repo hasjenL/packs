@@ -12,7 +12,7 @@ positions:
     legend: false
     row: 1
     col: 1
-    size_x: 1
+    size_x: 3
     size_y: 2
     series:
       - metric: 'source:status'
@@ -26,8 +26,8 @@ positions:
     filter: sum
     legend: false
     row: 1
-    col: 2
-    size_x: 2
+    col: 4
+    size_x: 3
     size_y: 2
     series:
       - metric: base.count
@@ -40,9 +40,9 @@ positions:
     icon: true
     filter: avg
     legend: false
-    row: 1
-    col: 4
-    size_x: 3
+    row: 3
+    col: 1
+    size_x: 6
     size_y: 2
     series:
       - metric: base.cpu
@@ -55,37 +55,22 @@ positions:
     icon: true
     filter: avg
     legend: false
-    row: 3
+    row: 5
     col: 1
-    size_x: 3
+    size_x: 6
     size_y: 2
     series:
       - metric: base.memory
         scope:
           tag: docker
-  - title: memory working set
-    data_type: number
-    type: detailed-chart
-    color: purple
-    icon: true
-    filter: avg
-    legend: false
-    row: 3
-    col: 4
-    size_x: 3
-    size_y: 2
-    series:
-      - metric: memory.working_set
-        scope:
-          tag: docker
   - title: network download (kps)
     data_type: number
-    type: detailed-chart
+    type: stacked-chart
     color: navy
     icon: true
     filter: avg
     legend: false
-    row: 5
+    row: 7
     col: 1
     size_x: 3
     size_y: 2
@@ -95,52 +80,16 @@ positions:
           tag: docker
   - title: network upload (kps)
     data_type: number
-    type: detailed-chart
+    type: stacked-chart
     color: fuchsia
     icon: true
     filter: avg
     legend: false
-    row: 5
+    row: 7
     col: 4
     size_x: 3
     size_y: 2
     series:
       - metric: base.net_upload
-        scope:
-          tag: docker
-  - title: network transmit and received dropped
-    data_type: number
-    type: detailed-chart
-    color: red
-    icon: true
-    filter: avg
-    legend: false
-    row: 7
-    col: 1
-    size_x: 3
-    size_y: 2
-    series:
-      - metric: network.rx_dropped
-        scope:
-          tag: docker
-      - metric: network.tx_dropped
-        scope:
-          tag: docker
-  - title: network transmit and receive errors
-    data_type: number
-    type: detailed-chart
-    color: red
-    icon: true
-    filter: avg
-    legend: false
-    row: 7
-    col: 4
-    size_x: 3
-    size_y: 2
-    series:
-      - metric: network.rx_errors
-        scope:
-          tag: docker
-      - metric: network.tx_errors
         scope:
           tag: docker
